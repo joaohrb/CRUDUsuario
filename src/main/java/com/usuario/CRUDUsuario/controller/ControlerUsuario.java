@@ -1,5 +1,5 @@
 package com.usuario.CRUDUsuario.controller;
-
+//teste
 import com.usuario.CRUDUsuario.model.Usuario;
 import com.usuario.CRUDUsuario.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +13,7 @@ public class ControlerUsuario {
 
 
     @GetMapping("/usuario")
-    public Iterable<Usuario> helloWorld(){
+    public Iterable<Usuario> consulta(){
      return usuarioRepository.findAll();
     }
 
@@ -24,7 +24,7 @@ public class ControlerUsuario {
 
     @PutMapping("/usuario/{id}")
     public String atualizarUsuario(@RequestBody Usuario usuario, @PathVariable Long id) {
-        usuarioRepository.deleteById(id);
+
         usuarioRepository.save(usuario);
         return "Usuario Atualizado com id:"+ id;
     }
